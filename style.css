@@ -30,7 +30,7 @@ body::before {
      height: 500px;
      display: flex;
      gap: 0px;
-     justify-content:space-evenly;
+     
 }
 .container .card {
      width: 20%;
