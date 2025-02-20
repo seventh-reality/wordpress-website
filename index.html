@@ -41,6 +41,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            display: block;
         }
         .card:hover .image {
             transform: scale(1.1);
@@ -73,7 +74,7 @@
 <body>
     <div class="container">
         <div class="card">
-            <img src="img/Fuji-Mountain.jpg" class="image" alt="Fuji Mountain">
+            <img src="img/Fuji-Mountain.jpg" class="image" alt="Fuji Mountain" onerror="this.onerror=null; this.src='img/default.jpg';">
             <div class="layer">
                 <div class="info">
                     <h1>Fuji Mountain</h1>
