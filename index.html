@@ -4,10 +4,8 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Image Hover Effect</title>
-     
-     
 </head>
- <style>
+<style>
        * {
      margin: 0;
      padding: 0;
@@ -54,7 +52,6 @@ header .logo {
 header nav ul {
      display: flex;
      list-style: none;
-     
 }
 header nav ul li {
      margin-left: 50px;
@@ -78,6 +75,7 @@ header nav ul li a:hover {
      border-radius: 0px;
      cursor: pointer;
      overflow: hidden;
+     position: relative;
 }
 .container .card:hover {
      width: 100%;
@@ -107,15 +105,18 @@ header nav ul li a:hover {
 }
 .container .card .layer {
      width: 100%;
-     height: 50%;
-     margin-top: -250px;
-     position: relative;
+     height: 100%;
+     position: absolute;
+     bottom: 0;
      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
 }
 .container .card .layer .info {
-     width: 260px;
+     width: 100%;
      position: absolute;
-     bottom: 10px;
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     text-align: center;
      padding: 20px;
      opacity: 0;
 }
@@ -129,48 +130,7 @@ header nav ul li a:hover {
      color: rgba(255, 255, 255, 0.7);
      margin-top: 20px;
 }
-
-.dropbtn {
-  background-color: #00000000;
-  color: white;
-  padding: 0px;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #000000;
-}
- </style>    
-
+</style>
 <body>
      <header>
           <a href="index.html" class="standard-logo" data-dark-logo="img/logo.png"><img src="img/logo.png" alt="Canvas Logo" style="height: 50px;"></a>
@@ -193,23 +153,22 @@ header nav ul li a:hover {
       </header>
      <div class="container">
           <div class="card">
-                
-               <img src="img/Fuji-Mountain .jpg" alt="" class="image" alt="AR">
-               <img src="img/Fuji-Mountain .jpg" alt="" class="background">
+               <img src="img/Fuji-Mountain.jpg" alt="" class="image">
+               <img src="img/Fuji-Mountain.jpg" alt="" class="background">
                <div class="layer">
                     <div class="info">
                          <h1>Fuji Mountain</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                </div>
           </div>
           <div class="card">
-               <img src="img/Marina-Bay .jpg" alt="" class="image">
-               <img src="img/Marina-Bay .jpg" alt="" class="background">
+               <img src="img/Marina-Bay.jpg" alt="" class="image">
+               <img src="img/Marina-Bay.jpg" alt="" class="background">
                <div class="layer">
                     <div class="info">
                          <h1>Marina Bay</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                </div>
           </div>
@@ -219,17 +178,17 @@ header nav ul li a:hover {
                <div class="layer">
                     <div class="info">
                          <h1>Status Liberty</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                </div>
           </div>
           <div class="card">
-               <img src="img/Taj-Mahal .jpg" alt="" class="image">
-               <img src="img/Taj-Mahal .jpg" alt="" class="background">
+               <img src="img/Taj-Mahal.jpg" alt="" class="image">
+               <img src="img/Taj-Mahal.jpg" alt="" class="background">
                <div class="layer">
                     <div class="info">
                          <h1>Taj Mahal</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                </div>
           </div>
