@@ -13,7 +13,7 @@
             color: #fff;
             transition: 0.5s ease;
         }
-         header {
+        header {
             width: 100%;
             height: 100px;
             display: flex;
@@ -23,9 +23,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            background: rgba(0, 0, 0, 0);
-            z-index: 10;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+            z-index: 10;
         }
 
         header .logo img {
@@ -35,10 +34,8 @@
         nav ul {
             display: flex;
             list-style: none;
-           gap: 20px;
-           align-content: stretch;
-            justify-content: center;
-           align-items: baseline;
+            gap: 20px;
+            align-items: baseline;
         }
 
         nav ul li {
@@ -74,21 +71,24 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #ffffff;
-            min-width: 80px;
+            background-color: #222;
+            min-width: 120px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            text-align: center;
+            border-radius: 5px;
+            overflow: hidden;
         }
 
         .dropdown-content a {
-            color: black;
-            padding: 10px;
+            color: white;
+            padding: 12px;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            background-color: #333;
+            background-color: #444;
         }
 
         .dropdown:hover .dropdown-content {
@@ -136,22 +136,7 @@
         .card:hover img {
             transform: scale(1.2);
         }
-        .card .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.25);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .card:hover .background {
-            opacity: 1;
-        }
-
+        
         .layer {
             position: absolute;
             bottom: 0;
@@ -161,9 +146,6 @@
             display: flex;
             align-items: flex-end;
             padding: 20px;
-        }
-        .card:hover .layer {
-            opacity: 1;
         }
 
         .info h1 {
