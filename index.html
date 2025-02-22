@@ -23,85 +23,6 @@
             background-color: rgba(0, 0, 0, 0.171);
         }
 
-        header {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: stretch;
-            padding: 0 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0);
-            z-index: 10;
-        }
-
-        header .logo img {
-            height: 50px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav ul li {
-            list-style: none;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            padding: 5px 10px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ddd;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropbtn {
-            background: transparent;
-            color: white;
-            border: none;
-            font-size: 14px;
-            cursor: pointer;
-            padding: 5px 10px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 150px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #444;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Image Hover Effect */
         .container {
             display: flex;
             width: 100%;
@@ -110,7 +31,6 @@
             gap: 0;
             background: radial-gradient(rgb(0 0 0 / 62%), rgba(0, 0, 0, 0.3));
             position: relative;
-            
         }
 
         .card {
@@ -136,22 +56,6 @@
             transform: scale(1.2);
         }
 
-        .card .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.25);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .card:hover .background {
-            opacity: 1;
-        }
-
         .layer {
             position: absolute;
             bottom: 0;
@@ -161,12 +65,6 @@
             display: flex;
             align-items: flex-end;
             padding: 20px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .card:hover .layer {
-            opacity: 1;
         }
 
         .info h1 {
@@ -181,33 +79,9 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <a href="index.html" class="logo">
-            <img src="img/logo.png" alt="Canvas Logo">
-        </a>
-        <nav>
-            <ul>
-                <li class="dropdown">
-                    <button class="dropbtn">MEDREA</button>
-                    <div class="dropdown-content">
-                        <a href="AR.html">AR</a>
-                        <a href="VR.html">VR</a>
-                        <a href="MR.html">MR</a>
-                        <a href="AI.html">AI</a>
-                    </div>
-                </li>
-                <li><a href="#">WHO WE ARE</a></li>
-                <li><a href="#">WHAT WE DO</a></li>
-                <li><a href="#">CONNECT</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <div class="container">
         <div class="card">
-            <img src="img/Fuji-Mountain.jpg" alt="Fuji Mountain" class="image">
-            <img src="img/Fuji-Mountain.jpg" alt="Fuji Mountain Background" class="background">
+            <img src="img/Fuji-Mountain.jpg" alt="Fuji Mountain">
             <div class="layer">
                 <div class="info">
                     <h1>AR</h1>
@@ -216,18 +90,16 @@
             </div>
         </div>
         <div class="card">
-            <img src="img/Marina-Bay.jpg" alt="Marina Bay" class="image">
-            <img src="img/Marina-Bay.jpg" alt="Marina Bay Background" class="background">
+            <img src="img/Marina-Bay.jpg" alt="Marina Bay">
             <div class="layer">
                 <div class="info">
                     <h1>VR</h1>
-                    <p>VIRTUVAL REALITY</p>
+                    <p>VIRTUAL REALITY</p>
                 </div>
             </div>
         </div>
         <div class="card">
-            <img src="img/Statue-Liberty.jpg" alt="Statue of Liberty" class="image">
-            <img src="img/Statue-Liberty.jpg" alt="Statue of Liberty Background" class="background">
+            <img src="img/Statue-Liberty.jpg" alt="Statue of Liberty">
             <div class="layer">
                 <div class="info">
                     <h1>MR</h1>
@@ -236,8 +108,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="img/Taj-Mahal.jpg" alt="Taj Mahal" class="image">
-            <img src="img/Taj-Mahal.jpg" alt="Taj Mahal Background" class="background">
+            <img src="img/Taj-Mahal.jpg" alt="Taj Mahal">
             <div class="layer">
                 <div class="info">
                     <h1>AI</h1>
@@ -246,6 +117,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
