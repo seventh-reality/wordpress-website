@@ -4,237 +4,156 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Image Hover Effect</title>
-     
-     
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+             font-family: sans-serif;
+             color: #fff;
+             transition: .5s ease;
+         }
+         body {
+             width: 100%;
+             height: 100vh;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             background-color: rgba(0, 0, 0, 0.171);
+             flex-direction: column;
+         }
+         header {
+             width: 100%;
+             height: 60px;
+             background: rgba(0, 0, 0, 0.5);
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             padding: 0 20px;
+             position: fixed;
+             top: 0;
+             z-index: 10;
+         }
+         header nav {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             width: 100%;
+         }
+         header nav ul {
+             display: flex;
+             list-style: none;
+             gap: 50px;
+         }
+         header nav ul li a {
+             text-decoration: none;
+             color: #fff;
+             font-size: 14px;
+         }
+         header nav ul li a:hover {
+             color: #ddd;
+         }
+         .container {
+             width: 90%;
+             max-width: 1200px;
+             display: flex;
+             gap: 10px;
+             margin-top: 80px;
+         }
+         .container .card {
+             flex: 1;
+             cursor: pointer;
+             overflow: hidden;
+             position: relative;
+         }
+         .container .card:hover {
+             flex: 2;
+         }
+         .container .card .image {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+         }
+         .container .card:hover .image {
+             transform: scale(1.2);
+         }
+         .container .card .layer {
+             position: absolute;
+             bottom: 0;
+             width: 100%;
+             height: 50%;
+             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+             display: flex;
+             align-items: flex-end;
+             padding: 20px;
+         }
+         .container .card .info {
+             opacity: 1;
+         }
+         .dropdown {
+             position: relative;
+             display: inline-block;
+         }
+         .dropdown-content {
+             display: none;
+             position: absolute;
+             background-color: #f9f9f9;
+             min-width: 160px;
+             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             z-index: 1;
+         }
+         .dropdown:hover .dropdown-content {
+             display: block;
+         }
+     </style>
 </head>
- <style>
-       * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: sans-serif;
-     color: #fff;
-     transition: .5s ease;
-}
-body {
-     width: 100%;
-     height: 100vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     background-color: rgba(0, 0, 0, 0.171);
-}
-body::before {
-     content: "";
-     background: #fff;
-     position: absolute;
-     width: 100%;
-     height: 100vh;
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
-     filter: brightness(0.25);
-     z-index: -1;
-     background-color: rgba(0, 0, 0, 0.171);
-}
-header {
-     width: 100%;
-     height: 60px;
-     background: rgba(0, 0, 0, 0);
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 0 20px;
-     position: fixed;
-     top: 0;
-     z-index: 1;
-}
-header .logo {
-     font-size: 24px;
-     font-weight: bold;
-}
-header nav ul {
-     display: flex;
-     list-style: none;
-     
-}
-header nav ul li {
-     margin-left: 50px;
-}
-header nav ul li a {
-     text-decoration: none;
-     color: #fff;
-     font-size: 12px;
-}
-header nav ul li a:hover {
-     color: #ddd;
-}
-.container {
-     width: 1920px;
-     height: 1080px;
-     display: flex;
-     gap: 0px;
-}
-.container .card {
-     width: 25%;
-     border-radius: 0px;
-     cursor: pointer;
-     overflow: hidden;
-}
-.container .card:hover {
-     width: 100%;
-}
-.container .card .image {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-}
-.container .card:hover .image {
-     transform: scale(1.2);
-}
-.container .card .background {
-     position: absolute;
-     left: 0;
-     top: 0;
-     z-index: -1;
-     width: 100%;
-     height: 100vh;
-     object-fit: cover;
-     pointer-events: none;
-     filter: brightness(0.25);
-     opacity: 0;
-}
-.container .card:hover .background {
-     opacity: 1;
-}
-.container .card .layer {
-     width: 100%;
-     height: 50%;
-     margin-top: -250px;
-     position: relative;
-     background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    
-}
-.container .card .layer .info {
-     width: 260px;
-     bottom: 10px;
-     padding: 20px;
-     opacity: 0;
-}
-.container .card:hover .layer .info {
-     opacity: 1;
-}
-.container .card:hover .layer .info h1 {
-     font-size: 30px;
-}
-.container .card:hover .layer .info p {
-     color: rgba(255, 255, 255, 0.7);
-     margin-top: 20px;
-}
-
-.dropbtn {
-  background-color: #00000000;
-  color: white;
-  padding: 0px;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #000000;
-}
- </style>    
-
 <body>
-     <header>
-          <a href="index.html" class="standard-logo" data-dark-logo="img/logo.png"><img src="img/logo.png" alt="Canvas Logo" style="height: 50px;"></a>
-          <nav>
-              <ul>
-               <div class="dropdown">
-                    <button class="dropbtn">MEDREA</button>
-                    <div class="dropdown-content">
-                    <a href="AR.html">AR</a>
-                    <a href="VR.html">VR</a>
-                    <a href="MR.html">MR</a>
-                    <a href="AI.html">AI</a>
-                    </div>
-                  </div>
-                  <li><a href="#">WHO WE ARE</a></li>
-                  <li><a href="#">WHAT WE DO</a></li>
-                  <li><a href="#">CONNECT</a></li>
-              </ul>
-          </nav>
-      </header>
-     <div class="container">
-          <div class="card">
-                
-               <img src="img/Fuji-Mountain .jpg" alt="" class="image" alt="AR">
-               <img src="img/Fuji-Mountain .jpg" alt="" class="background">
-               <div class="layer">
-                    <div class="info">
-                         <h1>Fuji Mountain</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
-                    </div>
-               </div>
-          </div>
-          <div class="card">
-               <img src="img/Marina-Bay .jpg" alt="" class="image">
-               <img src="img/Marina-Bay .jpg" alt="" class="background">
-               <div class="layer">
-                    <div class="info">
-                         <h1>Marina Bay</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
-                    </div>
-               </div>
-          </div>
-          <div class="card">
-               <img src="img/Status-Liberty.jpg" alt="" class="image">
-               <img src="img/Status-Liberty.jpg" alt="" class="background">
-               <div class="layer">
-                    <div class="info">
-                         <h1>Status Liberty</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
-                    </div>
-               </div>
-          </div>
-          <div class="card">
-               <img src="img/Taj-Mahal .jpg" alt="" class="image">
-               <img src="img/Taj-Mahal .jpg" alt="" class="background">
-               <div class="layer">
-                    <div class="info">
-                         <h1>Taj Mahal</h1>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto aspernatur perferendis cupiditate ab, odit nihil voluptatibus deleniti eligendi soluta vero.</p>
-                    </div>
-               </div>
-          </div>
-     </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">WHO WE ARE</a></li>
+                <li><a href="#">WHAT WE DO</a></li>
+                <li><a href="#">CONNECT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <img src="img/Fuji-Mountain.jpg" class="image" alt="Fuji Mountain">
+            <div class="layer">
+                <div class="info">
+                    <h1>Fuji Mountain</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/Marina-Bay.jpg" class="image" alt="Marina Bay">
+            <div class="layer">
+                <div class="info">
+                    <h1>Marina Bay</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/Status-Liberty.jpg" class="image" alt="Statue of Liberty">
+            <div class="layer">
+                <div class="info">
+                    <h1>Statue of Liberty</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/Taj-Mahal.jpg" class="image" alt="Taj Mahal">
+            <div class="layer">
+                <div class="info">
+                    <h1>Taj Mahal</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
