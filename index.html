@@ -132,6 +132,21 @@
         .card:hover img {
             transform: scale(1.2);
         }
+        .card .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.25);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card:hover .background {
+            opacity: 1;
+        }
 
         .layer {
             position: absolute;
@@ -142,6 +157,9 @@
             display: flex;
             align-items: flex-end;
             padding: 20px;
+        }
+        .card:hover .layer {
+            opacity: 1;
         }
 
         .info h1 {
